@@ -1,0 +1,685 @@
+@import "normal.scss"; //  Імпортувать файл в цей код
+
+@font-face {
+  font-family: "Lato";
+  src: url(fonts/Lato-Regular.ttf) format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url(fonts/Lato-Bold.ttf) format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 1 auto;
+}
+$fonts: 18px;
+$color-lite: #fff;
+$color-dark: #000;
+$color-darkblue: #102746;
+$font-weig: 400;
+$color-blue: #1b7dff;
+
+@mixin fontz($fonts, $font-weig, $color-lite) {
+  color: $color-lite;
+  font-size: $fonts;
+  font-style: normal;
+  font-weight: $font-weig;
+  line-height: normal;
+}
+
+.header {
+  background-image: url("Image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  max-width: 1262px;
+  margin: 0 auto;
+  &.container-head {
+    padding-inline: 100px;
+    background: linear-gradient(
+      180deg,
+      rgba(53, 66, 103, 0) 0%,
+      #151824 95.04%
+    );
+  }
+}
+.navbar {
+  padding-top: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 82px;
+  margin-bottom: 170px;
+  .item-nav {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 82px;
+      li {
+        a {
+          @include fontz($fonts, $font-weig, $color-lite);
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            border-bottom: 2px solid $color-lite;
+          }
+        }
+      }
+    }
+  }
+}
+.intro {
+  padding-bottom: 376px;
+  h1 {
+    @include fontz(50px, 500, $color-lite);
+    max-width: 60%;
+    margin-bottom: 22px;
+  }
+  p {
+    @include fontz(16px, 400, $color-lite);
+    line-height: 24px;
+    max-width: 50%;
+    margin-bottom: 60px;
+  }
+  .search-block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 62px;
+    a {
+      @include fontz(18px, 500, $color-lite);
+      padding-bottom: 20px;
+      border-bottom: 2px solid $color-lite;
+      &::before {
+        content: "";
+        border-radius: 50%;
+        border: 3px solid $color-lite;
+        padding-right: 20px;
+        margin-right: 20px;
+      }
+      &::after {
+        content: "";
+        margin-right: 50px;
+      }
+    }
+    button {
+      @include fontz(24px, 500, $color-lite);
+      padding: 15px 40px;
+      background: $color-blue;
+      border: none;
+    }
+  }
+}
+
+.main-card {
+  margin-top: -250px;
+  background: #fff;
+  box-shadow: 0px 2px 20px 0px rgba(21, 24, 36, 0.16);
+  padding: 100px;
+  h2 {
+    @include fontz(35px, 500, #102746);
+    margin-bottom: 120px;
+  }
+}
+.card-group {
+  padding: 60px 0px;
+  gap: 55px;
+  .card {
+    border: 0;
+    img {
+      width: 66px;
+      height: 66px;
+      margin-bottom: 37px;
+    }
+    .card-body {
+      padding: 0px;
+      h5 {
+        @include fontz(20px, 500, #000);
+        line-height: 24px;
+        margin-bottom: 26px;
+      }
+      p {
+        @include fontz(16px, 400, #000);
+        line-height: 24px;
+        margin-bottom: 39px;
+        max-width: 317px;
+      }
+    }
+  }
+  .card-footer {
+    position: relative;
+    padding: 0;
+    border: none;
+    background: $color-lite;
+    img {
+      position: absolute;
+      height: 60px;
+      width: 40px;
+      bottom: -54px;
+      right: 16px;
+    }
+  }
+}
+
+.img-menu {
+  padding: 120px 0px;
+  .title-card {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    h2 {
+      @include fontz(35px, 500, #102746);
+      span {
+        padding-bottom: 6px;
+        border-bottom: 3px solid $color-blue;
+      }
+    }
+    .item-viev {
+      gap: 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.row-two-card {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+.row-three-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-revers {
+  flex-direction: row-reverse;
+  padding-top: 80px;
+  margin-bottom: 150px;
+}
+.card-tourist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  .item-places {
+    width: 50%;
+    h3 {
+      @include fontz(30px, 500, #102746);
+      margin-bottom: 45px;
+      max-width: 357px;
+    }
+    p {
+      @include fontz(16px, 400, #102746);
+      line-height: 24px;
+      margin-bottom: 94px;
+      max-width: 519px;
+    }
+    .card-shape {
+      display: flex;
+      gap: 27px;
+    }
+  }
+}
+
+.today-top {
+  margin-bottom: 150px;
+  h3 {
+    @include fontz(35px, 500, #102746);
+    margin-bottom: 60px;
+    span {
+      padding-bottom: 5px;
+      border-bottom: 3px solid $color-blue;
+    }
+  }
+  .container-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    .places-item {
+      padding-right: 10px;
+      img {
+        margin-bottom: -48px;
+      }
+      .card-info {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 30px;
+        max-width: 400px;
+        padding: 10px 20px;
+        color: #ffffff;
+        background: rgba(21, 24, 36, 0.6);
+        filter: blur(0.1px);
+        &__title {
+          text-transform: uppercase;
+        }
+
+        &__indicators {
+          &-list {
+            display: flex;
+            column-gap: 20px;
+            padding-right: 20px;
+          }
+
+          &-item {
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+          }
+        }
+      }
+      p {
+        margin-bottom: 40px;
+        max-width: 400px;
+      }
+      button {
+        @include fontz(16px, 500, $color-lite);
+        padding: 12px 20px;
+        background: $color-blue;
+        border: none;
+      }
+    }
+  }
+}
+.video {
+  background: url("video.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .play-shape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 250px 0px;
+    background: rgba(21, 24, 36, 0.4);
+  }
+}
+
+.footer {
+  background: #0e1d28;
+  .footer-card {
+    padding: 120px 0px;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 160px;
+    row-gap: 50px;
+    flex-wrap: wrap;
+    .footer-list {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 160px;
+      row-gap: 50px;
+      flex-wrap: wrap;
+      ul {
+        li {
+          a {
+            @include fontz(18px, 500, $color-lite);
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .today-top {
+    margin-bottom: 100px;
+    h3 {
+      @include fontz(30px, 500, #102746);
+      margin-bottom: 60px;
+    }
+    .container-card {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      gap: 30px;
+      .places-item {
+        padding-right: 5px;
+        img {
+          margin-bottom: -48px;
+        }
+        .card-info {
+          max-width: 385px;
+        }
+        p {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 867px) {
+  .footer {
+    .footer-card {
+      padding: 60px 0px;
+      justify-content: center;
+      column-gap: 100px;
+      row-gap: 50px;
+      .footer-list {
+        justify-content: center;
+        column-gap: 100px;
+        row-gap: 50px;
+      }
+    }
+  }
+  .card-revers {
+    flex-direction: row;
+    padding-top: 40px;
+    margin-bottom: 100px;
+  }
+  .card-tourist {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    .item-places {
+      width: 70%;
+      h3 {
+        margin-bottom: 35px;
+      }
+      p {
+        margin-bottom: 44px;
+      }
+    }
+  }
+  .main-card {
+    margin-top: -150px;
+    background: #fff;
+    box-shadow: 0px 2px 20px 0px rgba(21, 24, 36, 0.16);
+    padding: 50px;
+    h2 {
+      @include fontz(35px, 500, #102746);
+      margin-bottom: 80px;
+    }
+  }
+  .card-group {
+    padding: 20px 0px;
+    gap: 25px;
+    .card {
+      gap: 25px;
+      border: 0;
+      img {
+        margin-bottom: 32px;
+      }
+      .card-body {
+        h5 {
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+        p {
+          line-height: 24px;
+          margin-bottom: 29px;
+          max-width: 317px;
+        }
+      }
+    }
+    .card-footer {
+      margin-bottom: 50px;
+      img {
+        display: none;
+      }
+    }
+  }
+  .intro {
+    h1 {
+      max-width: 410px;
+    }
+    p {
+      max-width: 390px;
+      margin-bottom: 40px;
+    }
+  }
+  .navbar {
+    padding-top: 26px;
+    gap: 42px;
+    margin-bottom: 70px;
+    .item-nav {
+      ul {
+        gap: 40px;
+      }
+    }
+  }
+  .container {
+    &.container-head {
+      padding-inline: 20px;
+    }
+  }
+  .search-block {
+    gap: 32px;
+  }
+}
+@media (max-width: 657px) {
+  .today-top {
+    margin-bottom: 50px;
+    h3 {
+      @include fontz(26px, 500, #102746);
+      margin-bottom: 40px;
+    }
+    .container-card {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 30px;
+      .places-item {
+        padding-right: 0px;
+        p {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .card-revers {
+    padding-top: 40px;
+    margin-bottom: 50px;
+  }
+  .card-tourist {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    .item-places {
+      width: 90%;
+      h3 {
+        margin-bottom: 25px;
+      }
+      p {
+        margin-bottom: 34px;
+      }
+    }
+  }
+  .img-menu {
+    padding: 60px 0px;
+    .title-card {
+      gap: 30px;
+      margin-bottom: 30px;
+      h2 {
+        @include fontz(30px, 500, #102746);
+        span {
+          padding-bottom: 6px;
+          border-bottom: 3px solid $color-blue;
+        }
+      }
+      .item-viev {
+        gap: 16px;
+      }
+    }
+  }
+
+  .row-two-card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .row-three-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 441px) {
+  .video {
+    .play-shape {
+      padding: 150px 0px;
+    }
+  }
+  .card-revers {
+    padding-top: 40px;
+  }
+  .card-tourist {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    .item-places {
+      width: 100%;
+      h3 {
+        margin-bottom: 25px;
+      }
+      p {
+        margin-bottom: 34px;
+      }
+    }
+  }
+  .img-menu {
+    padding: 40px 0px;
+    .title-card {
+      gap: 20px;
+      margin-bottom: 30px;
+      h2 {
+        @include fontz(22px, 500, #102746);
+        span {
+          padding-bottom: 6px;
+          border-bottom: 3px solid $color-blue;
+        }
+      }
+      .item-viev {
+        gap: 16px;
+      }
+    }
+  }
+
+  .row-two-card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .row-three-card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .container {
+    &.container-head {
+      padding-inline: 8px;
+    }
+  }
+  .navbar {
+    justify-content: center;
+    padding-top: 10px;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .intro {
+    padding-bottom: 100px;
+    h1 {
+      @include fontz(30px, 500, $color-lite);
+      margin-bottom: 30px;
+    }
+    p {
+      @include fontz(16px, 400, $color-lite);
+      line-height: 24px;
+      margin-bottom: 50px;
+    }
+    .search-block {
+      gap: 32px;
+      a {
+        @include fontz(18px, 500, $color-lite);
+        padding-bottom: 10px;
+        border-bottom: 2px solid $color-lite;
+        &::before {
+          content: "";
+          border-radius: 50%;
+          border: 3px solid $color-lite;
+          padding-right: 20px;
+          margin-right: 10px;
+        }
+        &::after {
+          content: "";
+          margin-right: 10px;
+        }
+      }
+      button {
+        @include fontz(16px, 500, $color-lite);
+        padding: 8px 20px;
+        background: $color-blue;
+      }
+    }
+  }
+  .main-card {
+    margin-top: 0px;
+    background: #fff;
+    box-shadow: 0px 2px 20px 0px rgba(21, 24, 36, 0.16);
+    padding: 10px;
+    h2 {
+      @include fontz(35px, 500, #102746);
+      margin-bottom: 20px;
+    }
+  }
+  .card-group {
+    padding: 20px 0px;
+    .card {
+      gap: 5px;
+      border: 0;
+      img {
+        margin-bottom: 22px;
+      }
+      .card-body {
+        h5 {
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+        p {
+          line-height: 24px;
+          margin-bottom: 29px;
+          max-width: 317px;
+        }
+      }
+    }
+    .card-footer {
+      margin-bottom: 20px;
+      img {
+        display: none;
+      }
+    }
+  }
+}
+@media (max-width: 382px) {
+  .navbar {
+    .item-nav {
+      ul {
+        gap: 19px;
+      }
+    }
+  }
+}
